@@ -1,0 +1,11 @@
+sampleemail@tdsb.on.ca. StandardTickets: 0. VIPTickets: 1
+
+sampleemail2@tdsb.on.ca. StandardTickets: 4. VIPTickets: 3
+
+sampleemail3@tdsb.on.ca. StandardTickets: 2. VIPTickets: 0
+
+sampleemail@tdsb.on.ca. StandardTickets: 0. VIPTickets: 1
+
+sampleemail2@tdsb.on.ca. StandardTickets: 4. VIPTickets: 3
+
+sampleemail3@tdsb.on.ca. StandardTickets: 2. VIPTickets: 0
