@@ -20,7 +20,7 @@ public class Main
         Output.OutputFile(Customers);
 
         for (int x = 0; x < Customers.length; x ++){
-          System.out.println(Customers[x].toString());
+          System.out.println(Customers[x].toString() + "\n");
         }
         
     }
