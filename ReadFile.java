@@ -22,7 +22,7 @@ public class ReadFile {
         
         Scanner sc = new Scanner (System.in);
         
-        String FileName = "values.txt";
+        String FileName = "Values.txt";
         String Line = "1"; 
         
         int times = 0;
