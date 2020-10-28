@@ -26,18 +26,22 @@ public class WriteFile {
                 int CustomerVIPTickets = CustomerInfo[x].GetVIPTickets();
                 int CustomerTickets = CustomerInfo[x].GetTickets();
 
+                pw.println("<<EMAIL>>");
+
                 // If there is enough standard and vip tickets left, order is fulfilled
                 if (MaxVIPTickets - CustomerVIPTickets > 0 & MaxStandardTickets - CustomerTickets > 0){
-                    pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has been fulfilled, send us your email and password\nwhich we will send them to our secure payment system to finish their transaction.\n");
+                    pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has been fulfilled, send us your email and password\nwhich we will send them to our secure payment system to finish their transaction.");
                     MaxVIPTickets -= CustomerVIPTickets;
                     MaxStandardTickets -= CustomerTickets;
 
                 // ticket order cannot be fulfilled
                 } else {
-                    pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has not been fulfilled\n");
+                    pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has not been fulfilled");
                 }
 
-                pw.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
+                pw.println("<<END EMAIL>>");
+
+                //pw.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
             }
             
             pw.close();
