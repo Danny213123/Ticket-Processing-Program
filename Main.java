@@ -15,9 +15,6 @@ public class Main
             }
         }
         
-        int NumberOfCustomers = Scan.GetSize();
-        int TotalNumberOfTickets = Scan.GetInputs();
-        
         CustomerInformation[] Customers = new CustomerInformation[StringArray.length];
         
         for (int y = 0; y < Customers.length; y ++){
@@ -25,6 +22,7 @@ public class Main
         }
         
         WriteFile Output = new WriteFile();
+        Output.RandomizeOrder(Customers);
         Output.OutputFile(Customers);
         
     }
