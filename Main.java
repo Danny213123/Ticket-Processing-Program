@@ -19,10 +19,8 @@ public class Main
         Customers = Output.RandomizeOrder(Customers);
         Output.OutputFile(Customers);
 
-        for (int x = 0; x < StringArray.length; x++){
-            for (int q = 0; q < StringArray[0].length; q++){
-                System.out.println(StringArray[x][q]);
-            }
+        for (int x = 0; x < Customers.length; x ++){
+          System.out.println(Customers[x].toString());
         }
         
     }
