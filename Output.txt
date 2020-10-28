@@ -1,65 +1,84 @@
-sampleemail1@tdsb.on.ca
+<<EMAIL>>
+sampleemail16@tdsb.on.ca
 Your ticket order has been fulfilled, send us your email and password
 which we will send them to our secure payment system to finish their transaction.
-
-9 VIP tickets left and 30 MaxStandardTickets left.
-
-sampleemail12@tdsb.on.ca
-Your ticket order has been fulfilled, send us your email and password
-which we will send them to our secure payment system to finish their transaction.
-
-2 VIP tickets left and 28 MaxStandardTickets left.
-
+<<END EMAIL>>
+<<EMAIL>>
 sampleemail9@tdsb.on.ca
-Your ticket order has not been fulfilled
-
-2 VIP tickets left and 28 MaxStandardTickets left.
-
-sampleemail11@tdsb.on.ca
-Your ticket order has not been fulfilled
-
-2 VIP tickets left and 28 MaxStandardTickets left.
-
-sampleemail2@tdsb.on.ca
-Your ticket order has not been fulfilled
-
-2 VIP tickets left and 28 MaxStandardTickets left.
-
-sampleemail3@tdsb.on.ca
 Your ticket order has been fulfilled, send us your email and password
 which we will send them to our secure payment system to finish their transaction.
-
-2 VIP tickets left and 26 MaxStandardTickets left.
-
-sampleemail8@tdsb.on.ca
-Your ticket order has not been fulfilled
-
-2 VIP tickets left and 26 MaxStandardTickets left.
-
-sampleemail17@tdsb.on.ca
-Your ticket order has been fulfilled, send us your email and password
-which we will send them to our secure payment system to finish their transaction.
-
-1 VIP tickets left and 20 MaxStandardTickets left.
-
-sampleemail5@tdsb.on.ca
-Your ticket order has not been fulfilled
-
-1 VIP tickets left and 20 MaxStandardTickets left.
-
-sampleemail4@tdsb.on.ca
-Your ticket order has not been fulfilled
-
-1 VIP tickets left and 20 MaxStandardTickets left.
-
+<<END EMAIL>>
+<<EMAIL>>
 sampleemail6@tdsb.on.ca
 Your ticket order has been fulfilled, send us your email and password
 which we will send them to our secure payment system to finish their transaction.
-
-1 VIP tickets left and 18 MaxStandardTickets left.
-
-sampleemail10@tdsb.on.ca
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail14@tdsb.on.ca
+Your ticket order has been fulfilled, send us your email and password
+which we will send them to our secure payment system to finish their transaction.
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail5@tdsb.on.ca
 Your ticket order has not been fulfilled
-
-1 VIP tickets left and 18 MaxStandardTickets left.
-
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail15@tdsb.on.ca
+Your ticket order has been fulfilled, send us your email and password
+which we will send them to our secure payment system to finish their transaction.
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail3@tdsb.on.ca
+Your ticket order has been fulfilled, send us your email and password
+which we will send them to our secure payment system to finish their transaction.
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail12@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail17@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail8@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail10@tdsb.on.ca
+Your ticket order has been fulfilled, send us your email and password
+which we will send them to our secure payment system to finish their transaction.
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail2@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail4@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail17@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail1@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail18@tdsb.on.ca
+Your ticket order has been fulfilled, send us your email and password
+which we will send them to our secure payment system to finish their transaction.
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail119@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail11@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
+<<EMAIL>>
+sampleemail13@tdsb.on.ca
+Your ticket order has not been fulfilled
+<<END EMAIL>>
