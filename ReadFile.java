@@ -74,11 +74,14 @@ public class ReadFile {
             while (Line != null){
                 for (int q = 0; q < this.Inputs; q++){
                     Line = in.readLine();
+                    if (Line == null){
+                        in.close();
+                        return Results;
+                    }
                     if (q % 3 == 0){
-                        System.out.println(Line);
-
                         // Trys to change input from string to int
                         try {
+                            int Test = Integer.parseInt(Line);
                             System.out.println("Input error");
                             System.out.println("Input error on line: " + times + ", input: " + q + ", email expected, recieved: " + Line);
                             System.exit(0);
@@ -86,14 +89,14 @@ public class ReadFile {
                         // Doesn't work means correct input recieved
                         } catch (NumberFormatException e){
 
-                            // input length must be > 12 for a good email
-                            if (Line.length() > 12){
+                            // input length must be > 10 for a good email
+                            if (Line.length() > 10){
                                 System.out.println("Correct Input Passed");
                                 CorrectLine = Line;
 
                             // Blank spaces mean input error
-                            } else {
-                                System.out.println("Input error");
+                            } else if (Line.length() < 10){
+                                System.out.println("Input error, input size");
                                 System.out.println("Input error on line: " + times + ", input: " + q + ", email expected, recieved: " + Line);
                                 System.exit(0);
                             }
@@ -102,11 +105,7 @@ public class ReadFile {
 
                     // If the input's correct, the input will be passed through
                     CorrectLine = Line;
-                    if (Line == null){
-                        in.close();
-                        return Results;
-                    }
-                    Results[times][q] = Line; 
+                    Results[times][q] = CorrectLine; 
                 }
                 times += 1;
             }
