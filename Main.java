@@ -9,12 +9,6 @@ public class Main
         
         String[][] StringArray = Scan.ScanFile();
         
-        for (int x = 0; x < StringArray.length; x++){
-            for (int q = 0; q < StringArray[0].length; q++){
-                System.out.println(StringArray[x][q]);
-            }
-        }
-        
         CustomerInformation[] Customers = new CustomerInformation[StringArray.length];
         
         for (int y = 0; y < Customers.length; y ++){
@@ -22,8 +16,14 @@ public class Main
         }
         
         WriteFile Output = new WriteFile();
-        Output.RandomizeOrder(Customers);
+        Customers = Output.RandomizeOrder(Customers);
         Output.OutputFile(Customers);
+
+        for (int x = 0; x < StringArray.length; x++){
+            for (int q = 0; q < StringArray[0].length; q++){
+                System.out.println(StringArray[x][q]);
+            }
+        }
         
     }
 }
