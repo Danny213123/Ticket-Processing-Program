@@ -1,3 +1,12 @@
+/** 
+ * Reads input file
+ *
+ * @Readfile Class
+ * @Author - Danny Guan
+ * @Version - 1
+ *
+ */
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -5,19 +14,37 @@ public class ReadFile {
     private int Inputs;
     private int Size;
     
+    /** Readfile Constructor.
+     *  
+     * @Param int Inputs - total number of inputs per customer
+     * @Param int Size - total number of customers
+     * 
+     */
     public ReadFile(int Inputs, int Size){
         this.Inputs = Inputs;
         this.Size = Size;
     }
     
+    /**
+    * Returns the number of inputs
+    * @return number of inputs
+    */
     public int GetInputs(){
         return this.Inputs;
     }
     
+    /**
+    * Returns the number of customers
+    * @return the number of customers
+    */
     public int GetSize(){
         return this.Size;
     }
     
+    /**
+	* Scans the file, customer index is row, customer order info is col
+    * @return the correct inputs in a 2d array
+	*/
     public String[][] ScanFile(){
         
         Scanner sc = new Scanner (System.in);
@@ -26,23 +53,55 @@ public class ReadFile {
         String Line = "1"; 
         
         int times = 0;
+        boolean Error = false;
         
         String[][] Results = new String[1][1];
         
         // Reads the file (values.txt) and stores the entries in an Array
         try{
             BufferedReader in = new BufferedReader(new FileReader(FileName));
-            
+                
+            int CheckError = 0;
+
             Line = in.readLine();
-            
+            String CorrectLine = "";
+                
             this.Size = Integer.parseInt(Line);
-            
+                
             Results = new String [this.Size][(this.Inputs)];
-            
+                
             // Reads the file and stores values in an array
             while (Line != null){
                 for (int q = 0; q < this.Inputs; q++){
                     Line = in.readLine();
+                    if (q % 3 == 0){
+                        System.out.println(Line);
+
+                        // Trys to change input from string to int
+                        try {
+                            System.out.println("Input error");
+                            System.out.println("Input error on line: " + times + ", input: " + q + ", email expected, recieved: " + Line);
+                            System.exit(0);
+
+                        // Doesn't work means correct input recieved
+                        } catch (NumberFormatException e){
+
+                            // input length must be > 12 for a good email
+                            if (Line.length() > 12){
+                                System.out.println("Correct Input Passed");
+                                CorrectLine = Line;
+
+                            // Blank spaces mean input error
+                            } else {
+                                System.out.println("Input error");
+                                System.out.println("Input error on line: " + times + ", input: " + q + ", email expected, recieved: " + Line);
+                                System.exit(0);
+                            }
+                        }
+                    }
+
+                    // If the input's correct, the input will be passed through
+                    CorrectLine = Line;
                     if (Line == null){
                         in.close();
                         return Results;
@@ -53,11 +112,11 @@ public class ReadFile {
             }
             in.close();
             return Results;
-        }
-        catch (IOException iox){
+        
+        // Invalid entery
+        } catch (IOException iox){
             System.out.println("Invalid entery");
         }
         return (Results);
     }
-    
 }
