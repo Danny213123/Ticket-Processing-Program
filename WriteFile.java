@@ -17,14 +17,14 @@ public class WriteFile {
                 int CustomerTickets = CustomerInfo[x].GetTickets();
 
                 if (MaxVIPTickets - CustomerVIPTickets > 0 & MaxStandardTickets - CustomerTickets > 0){
-                  pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has been fulfilled, send us your email and password\n which we will send them to our secure payment system to finish their transaction.\n");
+                  pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has been fulfilled, send us your email and password\nwhich we will send them to our secure payment system to finish their transaction.\n");
                   MaxVIPTickets -= CustomerVIPTickets;
                   MaxStandardTickets -= CustomerTickets;
                 } else {
                      pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has not been fulfilled\n");
                 }
 
-                System.out.println(MaxStandardTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
+                pw.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
             }
             
             pw.close();
