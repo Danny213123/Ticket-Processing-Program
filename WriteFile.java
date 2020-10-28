@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Random;
 import java.util.Scanner;
 
 public class WriteFile {
@@ -9,10 +10,7 @@ public class WriteFile {
             PrintWriter pw = new PrintWriter(fw);
             
             for (int x = 0; x < CustomerInfo.length; x++){
-              String Email = CustomerInfo[x].GetEmail();
-              int StandardTickets = CustomerInfo[x].GetTickets();
-              int VIPTickets = CustomerInfo[x].GetVIPTickets();
-              pw.println(Email + ". StandardTickets: " + StandardTickets + ". VIPTickets: " + VIPTickets + "\n");
+              pw.println(CustomerInfo[x].GetEmail() + ". StandardTickets: " + CustomerInfo[x].GetTickets() + ". VIPTickets: " + CustomerInfo[x].GetVIPTickets() + "\n");
             }
             
             pw.close();
@@ -20,4 +18,17 @@ public class WriteFile {
             System.out.println("l");
         }
     }
+
+    public CustomerInformation[] RandomizeOrder(CustomerInformation[] Array) {
+      Random random = new Random();
+
+      for (int i = Array.length - 1; i > 0; i--) {
+          int Index = random.nextInt(i + 1);
+
+          CustomerInformation Switch = Array[i];
+          Array[i] = Array[Index];
+          Array[Index] = Switch;
+      }
+      return Array;
+  }
 }
