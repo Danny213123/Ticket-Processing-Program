@@ -8,9 +8,23 @@ public class WriteFile {
             File file = new File("Output.txt");
             FileWriter fw = new FileWriter(file);
             PrintWriter pw = new PrintWriter(fw);
-            
+
+            int MaxStandardTickets = 30;
+            int MaxVIPTickets = 10;
+
             for (int x = 0; x < CustomerInfo.length; x++){
-              pw.println(CustomerInfo[x].GetEmail() + ". StandardTickets: " + CustomerInfo[x].GetTickets() + ". VIPTickets: " + CustomerInfo[x].GetVIPTickets() + "\n");
+                int CustomerVIPTickets = CustomerInfo[x].GetVIPTickets();
+                int CustomerTickets = CustomerInfo[x].GetTickets();
+
+                if (MaxVIPTickets - CustomerVIPTickets > 0 & MaxStandardTickets - CustomerTickets > 0){
+                  pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has been fulfilled, send us your email and password\n which we will send them to our secure payment system to finish their transaction.\n");
+                  MaxVIPTickets -= CustomerVIPTickets;
+                  MaxStandardTickets -= CustomerTickets;
+                } else {
+                     pw.println(CustomerInfo[x].GetEmail() + "\nYour ticket order has not been fulfilled\n");
+                }
+
+                System.out.println(MaxStandardTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
             }
             
             pw.close();
