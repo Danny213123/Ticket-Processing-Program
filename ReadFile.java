@@ -34,7 +34,6 @@ public class ReadFile {
             BufferedReader in = new BufferedReader(new FileReader(FileName));
             
             Line = in.readLine();
-            Line = in.readLine();
             
             this.Size = Integer.parseInt(Line);
             
