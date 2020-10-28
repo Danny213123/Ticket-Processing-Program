@@ -72,42 +72,44 @@ public class ReadFile {
                 
             // Reads the file and stores values in an array
             while (Line != null){
-                for (int q = 0; q < this.Inputs; q++){
-                    Line = in.readLine();
-                    if (Line == null){
-                        in.close();
-                        return Results;
-                    }
-                    if (q % 3 == 0){
-                        // Trys to change input from string to int
-                        try {
-                            int Test = Integer.parseInt(Line);
-                            System.out.println("Input error");
-                            System.out.println("Input error on line: " + times + ", input: " + q + ", email expected, recieved: " + Line);
-                            System.exit(0);
-
-                        // Doesn't work means correct input recieved
-                        } catch (NumberFormatException e){
-
-                            // input length must be > 10 for a good email
-                            if (Line.length() > 10){
-                                System.out.println("Correct Input Passed");
-                                CorrectLine = Line;
-
-                            // Blank spaces mean input error
-                            } else if (Line.length() < 10){
-                                System.out.println("Input error, input size");
-                                System.out.println("Input error on line: " + times + ", input: " + q + ", email expected, recieved: " + Line);
+                for (int l = 0; l < this.Size; l++){
+                    for (int q = 0; q < this.Inputs; q++){
+                        Line = in.readLine();
+                        if (Line == null){
+                            in.close();
+                            return Results;
+                        }
+                        if (q % 3 == 0){
+                            // Trys to change input from string to int
+                            try {
+                                int Test = Integer.parseInt(Line);
+                                int LineError = (l * this.Inputs) + 2;
+                                System.out.println("Input error, wrong input type");
+                                System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
                                 System.exit(0);
+
+                            // Doesn't work means correct input recieved
+                            } catch (NumberFormatException e){
+
+                                // input length must be > 10 for a good email
+                                if (Line.length() > 10){
+                                    CorrectLine = Line;
+
+                                // Blank spaces mean input error
+                                } else if (Line.length() < 10){
+                                    int LineError = (l * this.Inputs) + 2;
+                                    System.out.println("Input error, input size");
+                                    System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+                                    System.exit(0);
+                                }
                             }
                         }
-                    }
 
-                    // If the input's correct, the input will be passed through
-                    CorrectLine = Line;
-                    Results[times][q] = CorrectLine; 
+                        // If the input's correct, the input will be passed through
+                        CorrectLine = Line;
+                        Results[l][q] = CorrectLine; 
+                    }
                 }
-                times += 1;
             }
             in.close();
             return Results;
