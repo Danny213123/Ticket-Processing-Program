@@ -3,7 +3,7 @@
  *
  * @Readfile Class
  * @Author - Danny Guan
- * @Version - 6
+ * @Version - 7
  *
  */
 
@@ -50,6 +50,7 @@ public class ReadFile {
         Scanner sc = new Scanner (System.in);
         
         String FileName = "Values.txt";
+
         String Line = "1"; 
         
         int times = 0;
@@ -64,28 +65,54 @@ public class ReadFile {
             int CheckError = 0;
 
             Line = in.readLine();
+
             String CorrectLine = "";
-                
-            this.Size = Integer.parseInt(Line);
-                
-            Results = new String [this.Size][(this.Inputs)];
+            
+            try {
+
+                this.Size = Integer.parseInt(Line);
+
+            } catch (NumberFormatException e) {
+
+                System.out.println("Input error, no inputs");
+
+                System.out.println("Input error on line 1, integer expected, recieved: " + Line);
+
+                System.exit(0);
+
+            }
+
+             Results = new String [this.Size][(this.Inputs)];
                 
             // Reads the file and stores values in an array
             while (Line != null){
+
                 for (int l = 0; l < this.Size; l++){
+
                     for (int q = 0; q < this.Inputs; q++){
+
                         Line = in.readLine();
+
                         if (Line == null){
+
                             in.close();
+
                             return Results;
+
                         }
+
                         if (q % 3 == 0){
                             // Trys to change input from string to int
                             try {
+
                                 int Test = Integer.parseInt(Line);
+
                                 int LineError = (l * this.Inputs) + 2;
+
                                 System.out.println("Input error, wrong input type");
+
                                 System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+
                                 System.exit(0);
 
                             // Doesn't work means correct input recieved
@@ -93,13 +120,18 @@ public class ReadFile {
 
                                 // input length must be > 10 for a good email
                                 if (Line.length() > 10){
+
                                     CorrectLine = Line;
 
                                 // Blank spaces mean input error
                                 } else if (Line.length() < 10){
+
                                     int LineError = (l * this.Inputs) + 2;
+
                                     System.out.println("Input error, input size");
+
                                     System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+
                                     System.exit(0);
                                 }
                             }
@@ -111,13 +143,19 @@ public class ReadFile {
                     }
                 }
             }
+
             in.close();
+
             return Results;
         
         // Invalid entery
         } catch (IOException iox){
+
             System.out.println("Invalid entery");
+
         }
+
         return (Results);
+
     }
 }
