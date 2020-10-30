@@ -26,7 +26,7 @@ public class ErrorLog {
 
             // Date of when the error was logged
             Date date = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy);
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
             String formattedDate = sdf.format(date);
 
