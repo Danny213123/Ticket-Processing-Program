@@ -28,7 +28,7 @@ ReadFile.java class -
   This is also where input errors are checked, if there are any input errors, a message will be printed out on the system and 
   the error will be logged in ErrorLog.txt.
   
-    ----------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------
   
 CustomerInformation.java class -
 
