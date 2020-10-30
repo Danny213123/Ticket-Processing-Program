@@ -3,7 +3,7 @@
  *
  * @Readfile Class
  * @Author - Danny Guan
- * @Version - 8
+ * @Version - 9
  *
  */
 
@@ -72,6 +72,11 @@ public class ReadFile {
             try {
 
                 this.Size = Integer.parseInt(Line);
+		   
+		if (this.Size == 0){
+		   System.out.println("Zero inputs");
+		   System.exit(0);
+		}
 
             } catch (NumberFormatException e) {
                 System.out.println("Input error, no inputs");
