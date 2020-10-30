@@ -8,11 +8,15 @@ program was supposed to recieved, and what the program received.
 
 The classes are ordered on what the programs runs from first to last.
 
+  ----------------------------------------------------------------------------------------------------------
+
 Main.java class - 
 
   This class will tell the other classes what to do, first it tells the read file class to read the input file, store the values in an array
   which contains other customer order information, and tells the output file what to output. 
   Do not edit anything in this file other than the number of inputs.
+
+  ----------------------------------------------------------------------------------------------------------
 
 ReadFile.java class - 
 
@@ -24,20 +28,28 @@ ReadFile.java class -
   This is also where input errors are checked, if there are any input errors, a message will be printed out on the system and 
   the error will be logged in ErrorLog.txt.
   
+    ----------------------------------------------------------------------------------------------------------
+  
 CustomerInformation.java class -
 
   This class contains the Customerinformation constructor, containing customer ticket orders, VIP ticket orders and email. This class
   helps order customers and makes sure their orders and processed through our program.
+
+  ----------------------------------------------------------------------------------------------------------
 
 Lotter.java class -
 
   This class contains the Randomize order method, this method gets the customer queue from main,
   scambles it and returns it.
 
+  ----------------------------------------------------------------------------------------------------------
+
 WriteFile.java class -
 
   This class contains the OutputFile method, this is where all of the customer infromation will be printed in the
   Output.txt file.
+  
+  ----------------------------------------------------------------------------------------------------------
   
 ErrorLog.java class -
 
