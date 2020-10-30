@@ -44,7 +44,7 @@ ErrorLog.java class -
   If there are any errors in the program, the Output log method will log the errors with a time stamp.
   
   
-How to use:
+How to use the program:
   1. Put inputs in the Values.txt file.
   
     The first line must be the number of customers that has ordered tickets, if 6 customers ordered tickets, the first
