@@ -74,7 +74,7 @@ public class ReadFile {
                 this.Size = Integer.parseInt(Line);
 		   
 		if (this.Size == 0){
-		   System.out.println("Zero inputs");
+		   System.out.println("There are no requests");
 		   System.exit(0);
 		}
 
