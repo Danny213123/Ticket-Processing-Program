@@ -1,5 +1,5 @@
 # Tutorial
-How to use the ticket order processing program.
+About the program:
 
 This program has 5 separate classes, with different functions which will process ticket orders inputed by machine or user, ticket orders will be put in
 the Values.txt file and everything should be handled automatically. If any errors occur, an error message will be printed out on the system and will
@@ -42,3 +42,27 @@ WriteFile.java class -
 ErrorLog.java class -
 
   If there are any errors in the program, the Output log method will log the errors with a time stamp.
+  
+  
+How to use:
+  1. Put inputs in the Values.txt file.
+  
+    The first line must be the number of customers that has ordered tickets, if 6 customers ordered tickets, the first
+    line must be 6, or the program will not work.
+  
+  2. Just wait for the program to run, the output will be found in Output.txt file, in this file,
+  it will contain the customer's email and and email text message.
+  
+    The first line will be <<EMAIL>>
+    The next line will be the customer's email
+    
+    The next following lines will involve an order fulfilled message:
+    "Your ticket order has been fulfilled, send us your email and password which we will send them to our secure payment system to finish their transaction."
+    
+    Or an order unfilfilled message:
+    "Your ticket order has not been fulfilled"
+    
+    then it will end with an <<END EMAIL>>
+   
+   3. If you want to change the number of ticket variations, you need to change the inputs variable in Main.java.
+    int Inputs = 3;
