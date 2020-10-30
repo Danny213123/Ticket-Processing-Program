@@ -3,8 +3,8 @@ About the program:
 
 This program has 5 separate classes, with different functions which will process ticket orders inputed by machine or user, ticket orders will be put in
 the Values.txt file and everything should be handled automatically. If any errors occur, an error message will be printed out on the system and will
-be outputed in the Log.txt file, where will be able to know the date where the input occured, what line of the Values.txt file an error occured, what the
-program was supposed to recieved, and what the program recieved.
+be outputted in the Log.txt file, where will be able to know the date where the input occured, what line of the Values.txt file an error occurred, what the
+program was supposed to recieved, and what the program received.
 
 The classes are ordered on what the programs runs from first to last.
 
@@ -59,7 +59,7 @@ How to use:
     The next following lines will involve an order fulfilled message:
     "Your ticket order has been fulfilled, send us your email and password which we will send them to our secure payment system to finish their transaction."
     
-    Or an order unfilfilled message:
+    Or an order unfulfilled message:
     "Your ticket order has not been fulfilled"
     
     then it will end with an <<END EMAIL>>
