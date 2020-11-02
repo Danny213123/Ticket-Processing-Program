@@ -54,7 +54,7 @@ public class WriteFile {
 
                 output.println("<<END EMAIL>>");
 
-                output.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
+                //output.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
             }
             output.close();
         } catch (Exception e){
