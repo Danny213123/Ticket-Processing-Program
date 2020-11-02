@@ -14,21 +14,26 @@ public class Main
 {
     public static void main(String[] args)
     {
-        ReadFile Scan = new ReadFile(3, 1);
+        int Inputs = 3;
+
+        ReadFile Scan = new ReadFile(Inputs, 1);
         
         // Reads input file (Values.txt)
         String[][] StringArray = Scan.ScanFile();
+
+        Lottery CustomerLottery = new Lottery();
         
         CustomerInformation[] Customers = new CustomerInformation[StringArray.length];
         
         // Creates User objects with correct info
         for (int y = 0; y < Customers.length; y ++){
-            Customers[y] = new CustomerInformation(Integer.parseInt(StringArray[y][1]), Integer.parseInt(StringArray[y][2]), StringArray[y][0]);
+            Customers[y] = new CustomerInformation(Integer.parseInt(StringArray[y][1]),Integer.parseInt(StringArray[y][2]), StringArray[y][0]);
         }
         
+        Customers = CustomerLottery.RandomizeOrder(Customers);
+
         // Outputs file to Output.txt
         WriteFile Output = new WriteFile();
-        Customers = Output.RandomizeOrder(Customers);
         Output.OutputFile(Customers);
 
         // Prints out user information
