@@ -47,7 +47,7 @@ public class WriteFile {
 
                 // ticket order cannot be fulfilled
                 } else {
-                    output.println(CustomerInfo[x].GetEmail() + "\nYour ticket order of " + CustomerTickets + " standard tickets: " + CustomerVIPTickets + " VIP tickets has not been fulfilled");
+                    output.println(CustomerInfo[x].GetEmail() + "\nYour ticket order of " + CustomerTickets + " standard tickets and " + CustomerVIPTickets + " VIP tickets has not been fulfilled");
                 }
 
                 output.println("<<END EMAIL>>");
@@ -58,6 +58,4 @@ public class WriteFile {
             System.out.println("Error");
         }
     }
-
-
 }
