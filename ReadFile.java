@@ -1,7 +1,7 @@
 /** 
  * Reads input file
  *
- * @Readfile Class
+ * Readfile Class
  * @Author - Danny Guan
  * @Version - 9
  *
