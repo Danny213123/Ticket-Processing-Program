@@ -3,7 +3,7 @@
  *
  * @Readfile Class
  * @Author - Danny Guan
- * @Version - 10
+ * @Version - 9
  *
  */
 
@@ -39,6 +39,22 @@ public class ReadFile {
     */
     public int GetSize(){
         return this.Size;
+    }
+
+    /**
+    * Sets a new number of inputs
+    * @updates inputs
+    */
+    public void SetInputs(int Inputs){
+        this.Inputs = Inputs;
+    }
+
+    /**
+    * Sets a new number of customers
+    * @updates customers
+    */
+    public void SetSize(){
+        this.Size = Size;
     }
     
     /**
