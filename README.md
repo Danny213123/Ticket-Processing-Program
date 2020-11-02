@@ -37,7 +37,7 @@ CustomerInformation.java class -
 
   ----------------------------------------------------------------------------------------------------------
 
-Lotter.java class -
+Lottery.java class -
 
   This class contains the Randomize order method, this method gets the customer queue from main,
   scambles it and returns it.
