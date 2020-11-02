@@ -1,7 +1,7 @@
 /** 
  * Read, organize and output customer orders
  *
- * @Main Class
+ * Main Class
  * @Author - Danny Guan
  * @Version - 6
  *
