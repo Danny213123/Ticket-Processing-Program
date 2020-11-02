@@ -1,3 +1,12 @@
+/** 
+ * Randomly sorts the order of which customer's orders will be processed
+ *
+ * Lottery Class
+ * @Author - Danny Guan
+ * @Version - 2
+ *
+ */
+
 import java.util.Random;
 
 public class Lottery{
