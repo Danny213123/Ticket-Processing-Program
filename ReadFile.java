@@ -94,14 +94,20 @@ public class ReadFile {
 		   
 		if (this.Size == 0){
 		   System.out.println("There are no requests");
+
            log.OutputLog("No Requests", "", 1);
+
 		   System.exit(0);
+
 		}
 
             } catch (NumberFormatException e) {
                 System.out.println("Input error, no inputs");
+
                 System.out.println("Input error on line 1, integer expected, recieved: " + Line);
+
                 log.OutputLog("No inputs", Line, 1);
+
                 System.exit(0);
             }
 
@@ -109,9 +115,13 @@ public class ReadFile {
                 
             // Reads the file and stores values in an array
             while (Line != null){
+
                 for (int l = 0; l < this.Size; l++){
+
                     for (int q = 0; q < this.Inputs; q++){
+
                         Line = in.readLine();
+
                         if (Line == null){
                             in.close();
                             return Results;
@@ -122,9 +132,13 @@ public class ReadFile {
                             try {
                                 int Test = Integer.parseInt(Line);
                                 int LineError = (l * this.Inputs) + 2;
+
                                 System.out.println("Input error, wrong input type");
+
                                 System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+
                                 log.OutputLog("Wrong Input type", Line, LineError);
+
                                 System.exit(0);
 
                             // Doesn't work means correct input recieved
@@ -136,10 +150,15 @@ public class ReadFile {
 
                                 // Blank spaces mean input error
                                 } else if (Line.length() < 10){
+
                                     int LineError = (l * this.Inputs) + 2;
+
                                     System.out.println("Input error, input size");
+                                    
                                     System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+
                                     log.OutputLog("Wrong Input size", Line, LineError);
+
                                     System.exit(0);
                                 }
                             }
