@@ -3,7 +3,7 @@
  *
  * @WriteFile Class
  * @Author - Danny Guan
- * @Version - 8
+ * @Version - 7
  *
  */
 
@@ -44,7 +44,7 @@ public class WriteFile {
                     output.println(CustomerInfo[x].GetEmail() + "\nYour ticket order of " + CustomerTickets + " standard tickets and " + CustomerVIPTickets + " VIP tickets has been fulfilled, send us your email and password\nwhich we will send them to our secure payment system to finish their transaction.");
 
                     MaxVIPTickets -= CustomerVIPTickets;
-                    
+
                     MaxStandardTickets -= CustomerTickets;
 
                 // ticket order cannot be fulfilled
@@ -54,7 +54,7 @@ public class WriteFile {
 
                 output.println("<<END EMAIL>>");
 
-                //output.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
+                output.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
             }
             output.close();
         } catch (Exception e){
