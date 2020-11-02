@@ -1,7 +1,7 @@
 /** 
  * Outputs program errors
  *
- * @ErrorLog class
+ * ErrorLog class
  * @Author - Danny Guan
  * @Version - 2
  *
