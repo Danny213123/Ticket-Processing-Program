@@ -14,8 +14,9 @@ public class Lottery{
 
         // Sorts Array
         for (int i = Array.length - 1; i > 0; i--) {
-            int Index = random.nextInt(i + 1);
             
+            int Index = random.nextInt(i + 1);
+
             CustomerInformation Switch = Array[i];
 
             Array[i] = Array[Index];
