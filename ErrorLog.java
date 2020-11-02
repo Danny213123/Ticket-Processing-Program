@@ -18,7 +18,7 @@ public class ErrorLog {
         try {
 
             // Prints out errors in log.txt
-            File ErrorLog = new File("Log.txt");
+            File ErrorLog = new File("ErrorLog.txt");
 
             FileWriter FileWrite = new FileWriter(ErrorLog, true);
 
@@ -35,26 +35,26 @@ public class ErrorLog {
             // No requests made
             if (ErrorType.equals("No requests")){
 
-                PrintWrite.println("    >No requests made.");
+                PrintWrite.println(">No requests made.");
 
             // No inputs made
             } else if (ErrorType.equals("No inputs")){
 
-                PrintWrite.println("    >No inputs made.");
+                PrintWrite.println(">No inputs made.");
 
             // Wrong input type
             } else if (ErrorType.equals("Wrong Input type")){
 
-                PrintWrite.println("    >Input error, wrong input type.");
+                PrintWrite.println(">Input error, wrong input type.");
 
-                PrintWrite.println("    >Input error on line: " + LineError + ", email expected, recieved: " + Recieved + ".");
+                PrintWrite.println(">Input error on line: " + LineError + ", email expected, recieved: " + Recieved + ".");
 
             // Wrong input size
             } else if (ErrorType.equals("Wrong Input size")){
 
-                PrintWrite.println("    >Input error, wrong input size.");
+                PrintWrite.println(">Input error, wrong input size.");
 
-                PrintWrite.println("    >Input error on line: " + LineError + ", email expected, recieved: " + Recieved + ".");
+                PrintWrite.println(">Input error on line: " + LineError + ", email expected, recieved: " + Recieved + ".");
             }
 
             PrintWrite.close();
