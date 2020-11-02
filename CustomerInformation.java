@@ -1,7 +1,7 @@
 /** 
  * Organizes customer information
  *
- * @Customer information Class
+ * Customer information Class
  * @Author - Danny Guan
  * @Version - 2
  *
