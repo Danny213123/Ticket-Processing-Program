@@ -1,7 +1,7 @@
 /** 
  * Writes to output file
  *
- * @WriteFile Class
+ * WriteFile Class
  * @Author - Danny Guan
  * @Version - 7
  *
