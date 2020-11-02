@@ -61,7 +61,7 @@ public class ErrorLog {
 
         } catch (Exception e){
 
-            System.out.println("hello");
+            System.out.println("error");
         }
     }
 }
