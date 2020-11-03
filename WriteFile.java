@@ -1,60 +1,55 @@
 /** 
- * Writes to output file
+ * Writes email text to Output.txt file
  *
  * WriteFile Class
- * @Author - Danny Guan
- * @Version - 7
- *
+ * @author Danny Guan
+ * @version 7
  */
 
 import java.io.*;
-import java.util.Scanner;
 
 public class WriteFile {
 
     /** Outputs order requests
      *  
-     * @Param CustomerInformation[] CustomerInfo - Information about the Customer's order
-     * 
+     * @param customerInfo - Information about the Customer's order
      */
-    public void OutputFile(CustomerInformation[] CustomerInfo){
+    public void OutputFile(CustomerInformation[] customerInfo){
         try {
 
             File file = new File("Output.txt");
 
-            FileWriter FileWrite = new FileWriter(file);
+            FileWriter fileWrite = new FileWriter(file);
 
-            PrintWriter output = new PrintWriter(FileWrite);
+            PrintWriter output = new PrintWriter(fileWrite);
 
-            int MaxStandardTickets = 30;
+            int availableStandardTickets = 30;
 
-            int MaxVIPTickets = 10;
+            int availableVIPTickets = 10;
 
             // Scans through the customer info queue
-            for (int x = 0; x < CustomerInfo.length; x++){
+            for (int x = 0; x < customerInfo.length; x++){
 
-                int CustomerVIPTickets = CustomerInfo[x].GetVIPTickets();
+                int customerVIPTickets = customerInfo[x].GetVIPTickets();
 
-                int CustomerTickets = CustomerInfo[x].GetTickets();
+                int customerStandardTickets = customerInfo[x].GetTickets();
 
                 output.println("<<EMAIL>>");
 
                 // If there is enough standard and vip tickets left, order is fulfilled
-                if (MaxVIPTickets - CustomerVIPTickets >= 0 & MaxStandardTickets - CustomerTickets >= 0){
-                    output.println(CustomerInfo[x].GetEmail() + "\nYour ticket order of " + CustomerTickets + " standard tickets and " + CustomerVIPTickets + " VIP tickets has been fulfilled, send us your email and password\nwhich we will send them to our secure payment system to finish their transaction.");
+                if (availableVIPTickets - customerVIPTickets >= 0 & availableStandardTickets - customerStandardTickets >= 0){
+                    output.println(customerInfo[x].GetEmail() + "\nYour ticket order of " + customerStandardTickets + " standard ticket(s) and " + customerVIPTickets + " VIP ticket(s) has been fulfilled... \nEnter your email and password and you will be sent to our secure payment system to finish your transaction.");
 
-                    MaxVIPTickets -= CustomerVIPTickets;
+                    availableVIPTickets -= customerVIPTickets;
 
-                    MaxStandardTickets -= CustomerTickets;
+                    availableStandardTickets -= customerStandardTickets;
 
                 // ticket order cannot be fulfilled
                 } else {
-                    output.println(CustomerInfo[x].GetEmail() + "\nYour ticket order of " + CustomerTickets + " standard tickets and " + CustomerVIPTickets + " VIP tickets has not been fulfilled");
+                    output.println(customerInfo[x].GetEmail() + "\nSorry, your ticket order of " + customerStandardTickets + " standard ticket(s) and " + customerVIPTickets + " VIP ticket(s) could not been fulfilled");
                 }
 
                 output.println("<<END EMAIL>>");
-
-                //output.println(MaxVIPTickets + " VIP tickets left and " + MaxStandardTickets + " MaxStandardTickets left.\n");
             }
             output.close();
         } catch (Exception e){
