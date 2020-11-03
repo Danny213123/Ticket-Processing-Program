@@ -1,59 +1,55 @@
-/** 
- * Organizes customer information
+/**  Organizes customer information
  *
- * Customer information Class
- * @Author - Danny Guan
- * @Version - 2
- *
+ * CustomerInformation Class
+ * @author Danny Guan
+ * @version 2
  */
-
 public class CustomerInformation {
-    private int StandardTickets;
+    private int standardTickets;
     private int VIPTickets;
-    private String Email;
+    private String email;
     
     /** CustomerInformation Constructor.
      *  
-     * @Param int StandardTickets - Number of standard ticket  the customer wants.
-     * @Param int VIPTickets - Number of VIP tickets the customer wants.
-     * @Param String Email - Email of the customer.
-     * 
+     * @param standardTickets - Number of standard ticket the customer wants.
+     * @param VIPTickets - Number of VIP tickets the customer wants.
+     * @param email - Email of the customer.
      */
-    public CustomerInformation(int StandardTickets, int VIPTickets, String Email){
-        this.StandardTickets = StandardTickets;
+    public CustomerInformation(int standardTickets, int VIPTickets, String email){
+        this.standardTickets = standardTickets;
         this.VIPTickets = VIPTickets;
-        this.Email = Email;
+        this.email = email;
     }
     
-    /**
-    * Returns the standard ticket order 
-    * @return standard ticket order
-    */
+    /** Returns the number of standard ticket requested
+     *
+     * @return standard ticket order
+     */
     public int GetTickets(){
-        return this.StandardTickets;
+        return this.standardTickets;
     }
-    
-    /** 
-    * Returns the VIP ticket order
-    * @return VIP ticket order
-    */
+
+    /** Returns the number of VIP tickets requested
+     *
+     * @return VIP ticket order
+     */
     public int GetVIPTickets(){
         return this.VIPTickets;
     }
     
-    /** 
-    * Returns customer email
+    /** Returns the customers email
+    *
     * @return customer email
     */
     public String GetEmail(){
-        return this.Email;
+        return this.email;
     }
     
-    /** 
-    * Returns all customer information
-    * @return all customer information
+    /** Returns the customers email and tickets requested
+    *
+    * @return customers email and ticket request
     */
     public String toString(){
-        return(Email + ": #OfTickets: " + StandardTickets + " and #OfVIPTickets " + VIPTickets);
+        return("Email: " + email + ", # of Standard Tickets requested: " + standardTickets + " and # of VIP Tickets requested " + VIPTickets);
     }
 }
