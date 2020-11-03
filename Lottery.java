@@ -1,38 +1,32 @@
-/** 
- * Randomly sorts the order of which customer's orders will be processed
- *
- * Lottery Class
- * @Author - Danny Guan
- * @Version - 2
- *
- */
-
 import java.util.Random;
 
+/** Performs the lottery to determine the order in which ticket requests will be fulfilled
+ *
+ * Lottery Class
+ * @author Danny Guan
+ * @version 1
+ */
 public class Lottery{
-
-/**
-* Randomly orders the array
-* @Param CustomerInformation[] Array - Customer index
-* @updates Customer 2d array with sorted indexes
-*/
-
-    public CustomerInformation[] RandomizeOrder(CustomerInformation[] Array) {
+    /** Randomized the array which the ticket requests are stored in
+     *
+     * @param requests - array with all of the ticket requests
+     * @return the array with the ticket request order randomized
+     */
+    public CustomerInformation[] RandomizeOrder(CustomerInformation[] requests) {
 
         Random random = new Random();
 
-        // Sorts Array
-        for (int i = Array.length - 1; i > 0; i--) {
+        // Sorts array of requests
+        for (int i = requests.length - 1; i > 0; i--) {
             
-            int Index = random.nextInt(i + 1);
+            int index = random.nextInt(i + 1);
 
-            CustomerInformation Switch = Array[i];
+            CustomerInformation change = requests[i];
 
-            Array[i] = Array[Index];
+            requests[i] = requests[index];
 
-            Array[Index] = Switch;
+            requests[index] = change;
         }
-        return Array;
+        return requests;
     }
-
 }
