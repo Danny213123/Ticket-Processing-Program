@@ -1,163 +1,142 @@
-/** 
- * Reads input file
+/**Reads input file
  *
- * Readfile Class
- * @Author - Danny Guan
- * @Version - 9
- *
+ * ReadFile Class
+ * @author Danny Guan
+ * @version 9
  */
 
 import java.io.*;
-import java.util.Scanner;
 
 public class ReadFile {
-    private int Inputs;
-    private int Size;
+    private int inputs;
+    private int size;
     
-    /** Readfile Constructor.
+    /** ReadFile Constructor.
      *  
-     * @Param int Inputs - total number of inputs per customer
-     * @Param int Size - total number of customers
-     * 
+     * @param inputs - total number of ticket inputs per customer
+     * @param size - total number of customers
      */
-    public ReadFile(int Inputs, int Size){
-        this.Inputs = Inputs;
-        this.Size = Size;
+    public ReadFile(int inputs, int size){
+        this.inputs = inputs;
+        this.size = size;
     }
     
-    /**
-    * Returns the number of inputs
-    * @return number of inputs
-    */
+    /** Returns the number of customer inputs
+     *
+     * @return number of inputs
+     */
     public int GetInputs(){
-        return this.Inputs;
+        return this.inputs;
     }
-    
-    /**
-    * Returns the number of customers
-    * @return the number of customers
-    */
+
+    /** Returns the number of customers
+     *
+     * @return number of customers
+     */
     public int GetSize(){
-        return this.Size;
+        return this.size;
     }
 
-    /**
-    * Sets a new number of inputs
-    * @updates inputs
-    */
-    public void SetInputs(int Inputs){
-        this.Inputs = Inputs;
+    /** Sets a new number of customer inputs
+     *
+     * @param inputs - sets new number of inputs
+     */
+    public void SetInputs(int inputs){
+        this.inputs = inputs;
     }
 
-    /**
-    * Sets a new number of customers
-    * @updates customers
-    */
-    public void SetSize(){
-        this.Size = Size;
+    /** Sets a new number of customers
+     *
+     * @param size - sets new number of customers
+     */
+    public void SetSize(int size){
+        this.size = size;
     }
     
-    /**
-	* Scans the file, customer index is row, customer order info is col
-    * @return the correct inputs in a 2d array
-	*/
+    /** Scans the file, customer index is row, customer order info is col
+     *
+     * @return the correct inputs in a 2d array
+	 */
     public String[][] ScanFile(){
-        
-        Scanner sc = new Scanner (System.in);
-        
-        String FileName = "Values.txt";
-
-        String Line = "1"; 
+        String line;
 
         ErrorLog log = new ErrorLog();
-        
-        int times = 0;
-        
-        boolean Error = false;
-        
-        String[][] Results = new String[1][1];
+
+        String[][] results = new String[1][1];
         
         // Reads the file (values.txt) and stores the entries in an Array
         try{
 
-            BufferedReader in = new BufferedReader(new FileReader(FileName));
-                
-            int CheckError = 0;
+            BufferedReader in = new BufferedReader(new FileReader("Values.txt"));
 
-            Line = in.readLine();
+            line = in.readLine();
 
-            String CorrectLine = "";
+            String correctLine;
             
             try {
-
-                this.Size = Integer.parseInt(Line);
+                this.size = Integer.parseInt(line);
 		   
-		if (this.Size == 0){
-		   System.out.println("There are no requests");
+                if (this.size == 0){
+                   System.out.println("There are no ticket requests");
 
-           log.OutputLog("No Requests", "", 1);
+                   log.OutputLog("No Requests", "", 1);
 
-		   System.exit(0);
-
-		}
-
+                   System.exit(0);
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Input error, no inputs");
 
-                System.out.println("Input error on line 1, integer expected, recieved: " + Line);
+                System.out.println("Input error on line 1, integer expected, received: " + line);
 
-                log.OutputLog("No inputs", Line, 1);
+                log.OutputLog("No inputs", line, 1);
 
                 System.exit(0);
             }
 
-             Results = new String [this.Size][(this.Inputs)];
+             results = new String [this.size][(this.inputs)];
                 
             // Reads the file and stores values in an array
-            while (Line != null){
+            while (line != null){
 
-                for (int l = 0; l < this.Size; l++){
+                for (int l = 0; l < this.size; l++){
 
-                    for (int q = 0; q < this.Inputs; q++){
+                    for (int q = 0; q < this.inputs; q++){
 
-                        Line = in.readLine();
+                        line = in.readLine();
 
-                        if (Line == null){
+                        if (line == null){
                             in.close();
-                            return Results;
+                            return results;
                         }
 
                         if (q % 3 == 0){
-                            // Trys to change input from string to int
+
+                            // Try's to change input from string to int
                             try {
-                                int Test = Integer.parseInt(Line);
-                                int LineError = (l * this.Inputs) + 2;
+                                int test = Integer.parseInt(line);
+                                int lineError = (l * this.inputs) + 2;
 
                                 System.out.println("Input error, wrong input type");
 
-                                System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+                                System.out.println("Input error on line: " + lineError + ", email expected, received: " + line);
 
-                                log.OutputLog("Wrong Input type", Line, LineError);
+                                log.OutputLog("Wrong Input type", line, lineError);
 
                                 System.exit(0);
 
-                            // Doesn't work means correct input recieved
+                            // If exception thrown means correct input received
                             } catch (NumberFormatException e){
 
-                                // input length must be > 10 for a good email
-                                if (Line.length() > 10){
-                                    CorrectLine = Line;
+                                // input length must be > 3 as the lowest length of an email is 3 characters
+                                if (line.length() < 3){
 
-                                // Blank spaces mean input error
-                                } else if (Line.length() < 10){
-
-                                    int LineError = (l * this.Inputs) + 2;
+                                    int lineError = (l * this.inputs) + 2;
 
                                     System.out.println("Input error, input size");
                                     
-                                    System.out.println("Input error on line: " + LineError + ", email expected, recieved: " + Line);
+                                    System.out.println("Input error on line: " + lineError + ", email expected, received: " + line);
 
-                                    log.OutputLog("Wrong Input size", Line, LineError);
+                                    log.OutputLog("Wrong Input size", line, lineError);
 
                                     System.exit(0);
                                 }
@@ -165,20 +144,20 @@ public class ReadFile {
                         }
 
                         // If the input's correct, the input will be passed through
-                        CorrectLine = Line;
-                        Results[l][q] = CorrectLine; 
+                        correctLine = line;
+                        results[l][q] = correctLine;
                     }
                 }
             }
 
             in.close();
 
-            return Results;
+            return results;
         
-        // Invalid entery
+        // Invalid entry
         } catch (IOException iox){
-            System.out.println("Invalid entery");
+            System.out.println("Invalid entry");
         }
-        return (Results);
+        return (results);
     }
 }
