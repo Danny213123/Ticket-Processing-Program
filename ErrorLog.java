@@ -1,28 +1,23 @@
-/** 
- * Outputs program errors
+/** Outputs program errors
  *
  * ErrorLog class
- * @Author - Danny Guan
- * @Version - 2
- *
+ * @author Danny Guan
+ * @version 2
  */
 
 import java.io.*;
-import java.util.Scanner;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import java.sql.Timestamp;
 
 public class ErrorLog {
-    public void OutputLog(String ErrorType, String Recieved, int LineError){
+    public void OutputLog(String errorType, String received, int lineError){
         try {
-
             // Prints out errors in log.txt
-            File ErrorLog = new File("ErrorLog.txt");
+            File errorLog = new File("ErrorLog.txt");
 
-            FileWriter FileWrite = new FileWriter(ErrorLog, true);
+            FileWriter fileWrite = new FileWriter(errorLog, true);
 
-            PrintWriter PrintWrite = new PrintWriter(FileWrite);
+            PrintWriter printWrite = new PrintWriter(fileWrite);
 
             // Date of when the error was logged
             Date date = new Date();
@@ -30,34 +25,34 @@ public class ErrorLog {
 
             String formattedDate = sdf.format(date);
 
-            PrintWrite.println(formattedDate);
+            printWrite.println(formattedDate);
 
             // No requests made
-            if (ErrorType.equals("No requests")){
+            if (errorType.equals("No requests")){
 
-                PrintWrite.println(">No requests made.");
+                printWrite.println(">No requests made.");
 
             // No inputs made
-            } else if (ErrorType.equals("No inputs")){
+            } else if (errorType.equals("No inputs")){
 
-                PrintWrite.println(">No inputs made.");
+                printWrite.println(">No inputs made.");
 
             // Wrong input type
-            } else if (ErrorType.equals("Wrong Input type")){
+            } else if (errorType.equals("Wrong Input type")){
 
-                PrintWrite.println(">Input error, wrong input type.");
+                printWrite.println(">Input error, wrong input type.");
 
-                PrintWrite.println(">Input error on line: " + LineError + ", email expected, recieved: " + Recieved + ".");
+                printWrite.println(">Input error on line: " + lineError + ", email expected, received: " + received + ".");
 
             // Wrong input size
-            } else if (ErrorType.equals("Wrong Input size")){
+            } else if (errorType.equals("Wrong Input size")){
 
-                PrintWrite.println(">Input error, wrong input size.");
+                printWrite.println(">Input error, wrong input size.");
 
-                PrintWrite.println(">Input error on line: " + LineError + ", email expected, recieved: " + Recieved + ".");
+                printWrite.println(">Input error on line: " + lineError + ", email expected, received: " + received + ".");
             }
 
-            PrintWrite.close();
+            printWrite.close();
 
         } catch (Exception e){
 
