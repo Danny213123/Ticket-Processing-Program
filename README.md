@@ -65,7 +65,9 @@ ErrorLog.java class -
 How to use the program:
   1. Put inputs in the Values.txt file, and make sure the input file is connected to the program.
   
-    Before explaining how to format the input file you first need to make sure that you have the right file connected to the program. There are 2 options here, use the already created input file called Values.txt, or use your own input file.
+    Before explaining how to format the input file you first need to make sure that you have 
+    the right file connected to the program. There are 2 options here, use the already created 
+    input file called Values.txt, or use your own input file.
     
     To use the already created Values.txt file follow these steps:
     Look inside the file in which the program is stored in and find the file called Values.txt
@@ -75,13 +77,17 @@ How to use the program:
     Open the program in your IDE
     Open the ReadFile.java class
     On line 70, where it says “Values.txt” change it so that it says “YourFileName.txt” (YourFileName being the name of your file)
-    Make sure that your file is located in the same location where the Values.txt file was located, or specify the pathway within the quotations as well. For example: "C:/Users/arian/Desktop/TicketPoll4-main/Values.txt"
+    Make sure that your file is located in the same location where the Values.txt file was located, 
+    or specify the pathway within the quotations as well. For example: "C:/Users/arian/Desktop/TicketPoll4-main/Values.txt"
     Proceed to the formatting instructions in the following section
     
     
     Formatting Instructions:
     
-    The first line must be the number of customers that have requested tickets, if 6 customers have requested tickets, the first line must be 6, or the program will not work. The format for each of the customers will be the email address in one line, the number of standard tickets requested in the following line, and the number of VIP tickets requested in the line after that. An example of the input file is:
+    The first line must be the number of customers that have requested tickets, if 6 customers have requested tickets, 
+    the first line must be 6, or the program will not work. The format for each of the customers will be the email address in one line, 
+    the number of standard tickets requested in the following line, and the number of VIP tickets requested in the line after that. 
+    An example of the input file is:
     
     3
     sampleemail1@tdsb.on.ca
@@ -94,15 +100,27 @@ How to use the program:
     1
     3
     
-    In this example there are 3 customers requesting tickets. The first line is the number of customers. Then, each of the lines are following the format stated above. In the 2nd line is the first customers email, in the third line is the number of standard tickets they are requesting and in the fourth line is the number of VIP tickets they are requesting. Each following customer follows the same format.
+    In this example there are 3 customers requesting tickets. The first line is the number of customers. 
+    Then, each of the lines are following the format stated above. 
+    In the 2nd line is the first customers email, in the third line is the number of standard tickets they are 
+    requesting and in the fourth line is the number of VIP tickets         
+    they are requesting. Each following customer follows the same format.
 
   
   2. Just wait for the program to run, the output will be found in Output.txt file, in this file,
   it will contain the customer's email and and email text message.
   
-    To run the program open the program in your IDE and after it has finished loading open the main class and locate the run option. The instructions can not get much more specific here, as many IDEs have different formats and locations for running classes, or the run class button. If you can not locate the run button or need further instruction on how to run a class, it is suggested to search up something similar to the following example on your favourite search engine: “How to run a class on MyIDE” (MyIDE being whichever IDE you are using).
+    To run the program open the program in your IDE and after it has finished loading open the main class and locate the run option. 
+    The instructions can not get much more specific here, as many IDEs have different formats and locations for running classes, 
+    or the run class button. If you can not locate the run button or need further instruction on how to run a class, 
+    it is suggested to search up something similar to the following example on your favourite search engine: 
+    “How to run a class on MyIDE” (MyIDE being whichever IDE you are using).
     
-    Once you have run the program, you should be able to locate the Output.txt file on your IDE and in the file that the program is stored in (The same file which the Values.txt, if you have chosen to use that input file instead of another one, and all of the classes are stored in). In this file you will be able to see all of the emails of the ticket requests, and email text stating whether they were fulfilled or not. An example of this, using the same example used in step 1 for formatting an input file is:
+    Once you have run the program, you should be able to locate the Output.txt file on your IDE and in the file 
+    that the program is stored in (The same file which the Values.txt, if you have chosen to use that input file 
+    instead of another one, and all of the classes are stored in). In this file you will be able to see all of 
+    the emails of the ticket requests, and email text stating whether they were fulfilled or not. An example of this, 
+    using the same example used in step 1 for formatting an input file is:
     
     <<EMAIL>>
     sampleemail3@tdsb.on.ca
