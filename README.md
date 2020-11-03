@@ -79,6 +79,7 @@ How to use the program:
     On line 70, where it says “Values.txt” change it so that it says “YourFileName.txt” (YourFileName being the name of your file)
     Make sure that your file is located in the same location where the Values.txt file was located, 
     or specify the pathway within the quotations as well. For example: "C:/Users/arian/Desktop/TicketPoll4-main/Values.txt"
+    
     Proceed to the formatting instructions in the following section
     
     
@@ -87,6 +88,7 @@ How to use the program:
     The first line must be the number of customers that have requested tickets, if 6 customers have requested tickets, 
     the first line must be 6, or the program will not work. The format for each of the customers will be the email address in one line, 
     the number of standard tickets requested in the following line, and the number of VIP tickets requested in the line after that. 
+    
     An example of the input file is:
     
     3
@@ -114,6 +116,7 @@ How to use the program:
     The instructions can not get much more specific here, as many IDEs have different formats and locations for running classes, 
     or the run class button. If you can not locate the run button or need further instruction on how to run a class, 
     it is suggested to search up something similar to the following example on your favourite search engine: 
+    
     “How to run a class on MyIDE” (MyIDE being whichever IDE you are using).
     
     Once you have run the program, you should be able to locate the Output.txt file on your IDE and in the file 
